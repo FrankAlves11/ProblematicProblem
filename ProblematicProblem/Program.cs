@@ -72,7 +72,7 @@ class ProblematicProblem
                 Random rng = new Random();
                 int randomNumber = rng.Next(activities.Count);
                 string randomActivity = activities[randomNumber];
-                if (userAge < 21 && randomActivity == "Wine Tasting")
+                if (userAge > 21 && randomActivity == "Wine Tasting")
                 {
                     Console.WriteLine($"Oh no! Looks like you are too young to do {randomActivity}");
                     Console.WriteLine("Pick something else!");
@@ -80,7 +80,7 @@ class ProblematicProblem
                     int newRandomNumber = rng.Next(activities.Count);
                     string newRandomActivity = activities[newRandomNumber];
                 }
-                Console.Write($"Ah got it! {randomActivity}, your random activity is: {userName}! Is this ok or do you want to grab another activity? Keep/Redo: ");
+                Console.Write($"Ah got it! {userName}, your random activity is: {randomActivity}! Is this ok or do you want to grab another activity? Keep/Redo: ");
                         Console.WriteLine();
                  cont = Console.ReadLine().ToLower() == "redo" ? true : false;
             }
